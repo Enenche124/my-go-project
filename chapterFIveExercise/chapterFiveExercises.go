@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func Exercise1_Extremes() {
 	var count int
@@ -101,10 +104,47 @@ func Exercise4_trianglePrinting() {
 		fmt.Println()
 	}
 }
+
+func Exercise5_studentGrade() {
+	var grade string
+	var name string
+	var aCount, bCount, cCount, dCount int
+
+	for i := 1; i <= 5; i++ {
+		fmt.Printf("Enter name of student %d: ", i)
+		fmt.Scanln(&name)
+
+		fmt.Printf("Enter grade for %s (A, B, C, D): ", name)
+		fmt.Scanln(&grade)
+
+		grade = strings.ToUpper(grade)
+
+		switch grade {
+		case "A":
+			aCount++
+		case "B":
+			bCount++
+		case "C":
+			cCount++
+		case "D":
+			dCount++
+		default:
+			fmt.Println("Invalid grade entered. Only A, B, C, or D allowed.")
+
+		}
+	}
+
+	fmt.Println("\nGrade Summary:")
+	fmt.Println("Number of A's:", aCount)
+	fmt.Println("Number of B's:", bCount)
+	fmt.Println("Number of C's:", cCount)
+	fmt.Println("Number of D's:", dCount)
+}
 func main() {
 	Exercise1_Extremes()
 	Exercise2_integerDivisibleBy3()
 	Exercise3_sumOfASeries()
 	Exercise4_trianglePrinting()
+	Exercise5_studentGrade()
 
 }
