@@ -140,11 +140,41 @@ func Exercise5_studentGrade() {
 	fmt.Println("Number of C's:", cCount)
 	fmt.Println("Number of D's:", dCount)
 }
+
+func Exercise6_diamondPrintingProgram() {
+	n := 5
+
+	for count := 1; count <= n; count++ {
+
+		for innerCounter := 1; innerCounter <= n-count; innerCounter++ {
+			fmt.Print(" ")
+		}
+
+		for k := 1; k <= 2*count-1; k++ {
+			fmt.Print("*")
+		}
+		fmt.Println()
+	}
+
+	for count := n - 1; count >= 1; count-- {
+
+		for innerCounter := 1; innerCounter <= n-count; innerCounter++ {
+			fmt.Print(" ")
+		}
+
+		for k := 1; k <= 2*count-1; k++ {
+			fmt.Print("*")
+		}
+		fmt.Println()
+	}
+}
+
 func main() {
-	Exercise1_Extremes()
-	Exercise2_integerDivisibleBy3()
-	Exercise3_sumOfASeries()
-	Exercise4_trianglePrinting()
-	Exercise5_studentGrade()
+	// Exercise1_Extremes()
+	// Exercise2_integerDivisibleBy3()
+	// Exercise3_sumOfASeries()
+	// Exercise4_trianglePrinting()
+	// Exercise5_studentGrade()
+	Exercise6_diamondPrintingProgram()
 
 }
